@@ -1,4 +1,4 @@
-import fetch from "node-fetch"
+import 'cross-fetch/polyfill'
 const core = require('@actions/core')
 
 async function queryHosts(token, networkId) {
