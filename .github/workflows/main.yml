@@ -19,3 +19,13 @@ jobs:
       # Use the output from the `hello` step
       - name: Get the output hosts
         run: echo "The hosts was ${{ steps.plain.outputs.hosts }}"
+      - name: zerotier-hosts action step
+        uses: ./ # Uses an action in the root directory
+        id: json
+        with:
+          network-id: ${{ secrets.NETWORK_ID }}
+          api-access-token: ${{ secrets.API_ACCESS_TOKEN }}
+          format: 'json'
+      # Use the output from the `hello` step
+      - name: Get the output hosts
+        run: echo "The hosts was ${{ steps.json.outputs.hosts }}"
