@@ -1,0 +1,19 @@
+name: 'ZeroTier One hosts action'
+description: 'List all hosts in ZeroTier network'
+inputs:
+  network-id:  # id of input
+    description: 'The network ID'
+    required: true
+  api-access-token:
+    description: 'The ZeroTier API Access token'
+    required: true
+  format:
+    description: 'The format of output. plain or json'
+    required: true
+    default: 'plain'
+outputs:
+  hosts: # id of output
+    description: 'The hosts list'
+runs:
+  using: 'node12'
+  main: 'index.js'

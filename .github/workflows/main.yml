@@ -1,0 +1,21 @@
+on: [push]
+
+jobs:
+  zerotier-hosts:
+    runs-on: ubuntu-latest
+    name: A job to Test zerotier-hosts
+    steps:
+      # To use this repository's private action,
+      # you must check out the repository
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: zerotier-hosts action step
+        uses: ./ # Uses an action in the root directory
+        id: plain
+        with:
+          network-id: ${{ secrets.NETWORK_ID }}
+          api-access-token: ${{ secrets.API_ACCESS_TOKEN }}
+          format: 'plain'
+      # Use the output from the `hello` step
+      - name: Get the output hosts
+        run: echo "The time was ${{ steps.plain.outputs.hosts }}"
