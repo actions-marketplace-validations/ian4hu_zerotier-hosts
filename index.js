@@ -1,4 +1,5 @@
-const core = require('@actions/core');
+import fetch from "node-fetch"
+const core = require('@actions/core')
 
 async function queryHosts(token, networkId) {
     const members = await fetch(`https://my.zerotier.com/api/v1/network/${networkId}/member`, {
