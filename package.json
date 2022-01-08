@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/ian4hu/zerotier-hosts/issues"
   },
-  "homepage": "https://github.com/ian4hu/zerotier-hosts#readme"
+  "homepage": "https://github.com/ian4hu/zerotier-hosts#readme",
+  "dependencies": {
+    "@actions/core": "^1.6.0"
+  }
 }
